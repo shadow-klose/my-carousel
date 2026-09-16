@@ -1,17 +1,21 @@
 # 🎠 my-carousel
 
-纯前端轮播组件练习 —— 从「HTML 写死三张图」改成「数据驱动渲染」。
+纯前端轮播组件：slides 抽成数据，JS 循环渲染 DOM，translateX 切换。
 
-## 为什么这么写
-把内容和视图分开：slides 放数组，JS 循环生成 DOM。
-以后换成 Astro / React / AEM HTL，只是换语法，
-「数据 → 模板 → 页面」这个思路不变。
+## 思路
+内容与视图分离 —— 数据改一处，页面整体跟着变。
+这套结构后续可直接平移到 Astro / React / AEM HTL，只是语法换皮。
 
 ## 跑起来
-双击 `index.html` 就行，不用装任何东西。
+双击 `index.html` 即可，零依赖、无需构建。
 
-## 我的学习脚印
-- Day1：HTML/CSS/JS 跑通轮播 + 推上 GitHub
-- Day2：补 README，搞懂「文件得在 .git 夹子里 Git 才认」
-- 下一步：搬进 Astro 当 `<Carousel />` 组件
+## 技术点
+- DOM 动态创建（createElement + appendChild）
+- 索引取模实现首尾循环
+- 圆点与箭头状态同步
 
+## 路线
+- [x] 数据驱动版轮播
+- [x] Git 完整工作流（add / commit / pull / push）
+- [ ] 迁移为 Astro 组件 `<Carousel client:load />`
+- [ ] 接 Content Collection 当内容源
